@@ -1,0 +1,19 @@
+Bug Bounty Wordlists Pro - Commercial License
+
+Copyright (c) 2026 Yosi Ismalov
+
+The purchaser may use the included files for personal security research,
+authorized penetration testing, bug bounty programs, and internal security
+testing.
+
+The purchaser may not:
+
+- Resell the files.
+- Redistribute the complete package.
+- Upload the complete package to public repositories.
+- Share the package with third parties.
+- Claim authorship of the package.
+- Include the package in another paid product without written permission.
+
+No warranty is provided. The user is responsible for ensuring that all testing
+is authorized and lawful.

@@ -1,0 +1,11 @@
+*.zip
+*.tar.gz
+*.7z
+*.bak
+*.tmp
+*.swp
+*~
+__pycache__/
+private/
+dist/
+build/
