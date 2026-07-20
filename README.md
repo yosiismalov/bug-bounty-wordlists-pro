@@ -34,3 +34,18 @@ explicit authorization to test.
 ## Version
 
 Current version: 1.0.0
+
+## Current contents
+
+- IDOR parameters and paths
+- GraphQL endpoints
+- OAuth and OpenID Connect endpoints
+- SSRF-related parameter names
+- Common API endpoints
+- Sensitive files and configuration paths
+
+Run the following command to view current statistics:
+
+```bash
+./scripts/stats.sh
+```

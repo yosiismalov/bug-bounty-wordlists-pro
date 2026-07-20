@@ -1,0 +1,14 @@
+/api/graphql
+/api/v1/graphql
+/api/v2/graphql
+/graphiql
+/graphql
+/graphql/api
+/graphql/console
+/graphql/explorer
+/graphql/playground
+/graphql/v1
+/graphql/v2
+/query
+/v1/graphql
+/v2/graphql
