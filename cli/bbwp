@@ -133,6 +133,124 @@ def read_entries(file: Path) -> list[str]:
     ]
 
 
+
+def command_doctor(_: argparse.Namespace) -> int:
+    print("Bug Bounty Wordlists Pro Doctor")
+    print("===============================")
+
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    if PROJECT_ROOT.is_dir():
+        print(f"[OK] Project root: {PROJECT_ROOT}")
+    else:
+        errors.append(f"Project root is missing: {PROJECT_ROOT}")
+
+    if VERSION_FILE.is_file():
+        version = VERSION_FILE.read_text(encoding="utf-8").strip()
+
+        if version:
+            print(f"[OK] Version file: {version}")
+        else:
+            errors.append("VERSION.txt is empty")
+    else:
+        errors.append(f"Version file is missing: {VERSION_FILE}")
+
+    if WORDLIST_ROOT.is_dir():
+        print(f"[OK] Wordlist directory: {WORDLIST_ROOT}")
+    else:
+        errors.append(f"Wordlist directory is missing: {WORDLIST_ROOT}")
+
+    cli_file = Path(__file__).resolve()
+
+    if cli_file.stat().st_mode & 0o111:
+        print("[OK] CLI file is executable")
+    else:
+        warnings.append(f"CLI file is not executable: {cli_file}")
+
+    files = get_wordlists() if WORDLIST_ROOT.is_dir() else []
+
+    if files:
+        print(f"[OK] Wordlist files: {len(files)}")
+    else:
+        errors.append("No wordlist files were found")
+
+    total_entries = 0
+    empty_files: list[str] = []
+    duplicate_files: list[tuple[str, int]] = []
+    formatting_files: list[tuple[str, int]] = []
+
+    for file in files:
+        raw_lines = file.read_text(encoding="utf-8").splitlines()
+        entries = [line.strip() for line in raw_lines if line.strip()]
+
+        total_entries += len(entries)
+
+        if not entries:
+            empty_files.append(relative_name(file))
+
+        duplicate_count = len(entries) - len(set(entries))
+
+        if duplicate_count:
+            duplicate_files.append(
+                (relative_name(file), duplicate_count)
+            )
+
+        formatting_count = sum(
+            1
+            for line in raw_lines
+            if not line.strip() or line != line.strip()
+        )
+
+        if formatting_count:
+            formatting_files.append(
+                (relative_name(file), formatting_count)
+            )
+
+    if total_entries:
+        print(f"[OK] Total entries: {total_entries}")
+
+    if empty_files:
+        for filename in empty_files:
+            errors.append(f"Empty wordlist: {filename}")
+    else:
+        print("[OK] No empty wordlists")
+
+    if duplicate_files:
+        for filename, count in duplicate_files:
+            errors.append(
+                f"Duplicate entries: {filename} ({count})"
+            )
+    else:
+        print("[OK] No duplicate entries")
+
+    if formatting_files:
+        for filename, count in formatting_files:
+            warnings.append(
+                f"Blank or untrimmed lines: {filename} ({count})"
+            )
+    else:
+        print("[OK] Wordlist formatting")
+
+    print("===============================")
+
+    for warning in warnings:
+        print(f"[WARN] {warning}")
+
+    for error in errors:
+        print(f"[ERROR] {error}", file=sys.stderr)
+
+    if errors:
+        print(f"Status: unhealthy ({len(errors)} errors)")
+        return 1
+
+    if warnings:
+        print(f"Status: healthy with {len(warnings)} warnings")
+        return 0
+
+    print("Status: healthy")
+    return 0
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="bbwp",
@@ -174,6 +292,11 @@ def build_parser() -> argparse.ArgumentParser:
     export_parser.add_argument("wordlist")
     export_parser.add_argument("-o", "--output", required=True)
     export_parser.set_defaults(function=command_export)
+    doctor_parser = subparsers.add_parser(
+        "doctor",
+        help="Check the package installation and wordlist integrity.",
+    )
+    doctor_parser.set_defaults(function=command_doctor)
 
     return parser
 

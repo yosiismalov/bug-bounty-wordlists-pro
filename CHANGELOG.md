@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.0
+
+- Added the `bbwp doctor` command
+- Added installation integrity checks
+- Added empty wordlist detection
+- Added duplicate entry detection
+- Added wordlist formatting validation
 ## 1.0.0 - In development
 
 ### Added
