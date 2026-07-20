@@ -1,0 +1,10 @@
+/api/stripe
+/billing
+/checkout
+/payment
+/payments
+/stripe
+/stripe/callback
+/stripe/checkout
+/stripe/webhook
+/stripe/webhooks

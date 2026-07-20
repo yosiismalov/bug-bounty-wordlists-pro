@@ -1,0 +1,11 @@
+/.config/gcloud
+/.gcloud
+/gcp
+/gcp/metadata
+/google
+/google/cloud
+/google/iam
+/google/storage
+/metadata/computeMetadata
+/service-account
+/storage

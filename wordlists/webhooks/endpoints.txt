@@ -1,0 +1,16 @@
+/api/hooks
+/api/webhook
+/api/webhooks
+/hooks
+/hooks/incoming
+/hooks/outgoing
+/integrations/webhook
+/integrations/webhooks
+/notifications/webhook
+/webhook
+/webhook/callback
+/webhook/events
+/webhook/test
+/webhooks
+/webhooks/incoming
+/webhooks/outgoing

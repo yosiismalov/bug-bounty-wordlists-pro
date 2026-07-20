@@ -1,0 +1,15 @@
+/.jwks
+/.well-known/jwks.json
+/.well-known/openid-configuration
+/api/jwks
+/api/jwt
+/api/token
+/auth/jwks
+/auth/token
+/jwks
+/jwks.json
+/jwt
+/oauth/jwks
+/oauth/token
+/openid-configuration
+/token

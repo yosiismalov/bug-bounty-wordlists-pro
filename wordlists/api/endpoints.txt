@@ -60,9 +60,9 @@
 /openapi.json
 /openapi.yaml
 /swagger
-/swagger.json
 /swagger-ui
 /swagger-ui.html
+/swagger.json
 /swagger.yaml
 /v1
 /v1/auth

@@ -1,0 +1,8 @@
+/admin/api
+/api/shopify
+/shopify
+/shopify/admin
+/shopify/callback
+/shopify/oauth
+/shopify/webhook
+/shopify/webhooks

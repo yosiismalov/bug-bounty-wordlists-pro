@@ -1,0 +1,13 @@
+/.azure
+/.azure/accessTokens.json
+/.azure/azureProfile.json
+/azure
+/azure/ad
+/azure/blob
+/azure/functions
+/azure/keyvault
+/azure/storage
+/entra
+/graph
+/keyvault
+/msal

@@ -1,0 +1,10 @@
+/.github
+/.github/workflows
+/api/github
+/github
+/github/callback
+/github/hooks
+/github/oauth
+/github/webhook
+/github/webhooks
+/integrations/github

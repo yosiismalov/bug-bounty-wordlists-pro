@@ -1,0 +1,14 @@
+/api/mobile
+/api/v1/mobile
+/api/v2/mobile
+/app
+/app/config
+/app/update
+/device
+/device/register
+/mobile
+/mobile/config
+/mobile/login
+/mobile/register
+/push
+/push/register
