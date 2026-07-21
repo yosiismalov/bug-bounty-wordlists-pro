@@ -1,8 +1,10 @@
-#Bug Bounty Wordlists Community
+# Bug Bounty Wordlists Community
+
 Curated security testing wordlists for authorized bug bounty programs,
 penetration testing engagements, security labs, and defensive research.
 
-This repository contains the free Community Edition. The Pro Edition includes additional payload packs, templates and documentation.
+This repository contains the free Community Edition.
+The Pro Edition includes additional payload packs, templates and documentation.
 
 ## Project Structure
 
