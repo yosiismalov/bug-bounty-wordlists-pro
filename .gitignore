@@ -10,3 +10,6 @@ private/
 dist/
 build/
 release/
+
+# Private Pro edition
+pro/
