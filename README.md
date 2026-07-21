@@ -49,3 +49,22 @@ Run the following command to view current statistics:
 ```bash
 ./scripts/stats.sh
 ```
+---
+
+# 🚀 Bug Bounty Wordlists Pro
+
+Looking for additional payload packs, organized testing resources and ready-to-customize Nuclei templates?
+
+The Pro edition includes:
+
+- JWT payload pack
+- OAuth & OpenID Connect payload pack
+- GraphQL payload pack
+- IDOR / BOLA payload pack
+- XSS payload pack
+- Ready-to-customize Nuclei templates
+- Documentation and quick-start guides
+
+## Get the Pro version
+
+👉 https://yosiismalov.gumroad.com/l/bug-bounty-wordlists-pro
