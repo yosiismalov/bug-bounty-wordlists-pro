@@ -1,5 +1,4 @@
-# Bug Bounty Wordlists Pro
-
+Bug Bounty Wordlists Community
 Curated security testing wordlists for authorized bug bounty programs,
 penetration testing engagements, security labs, and defensive research.
 
