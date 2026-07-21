@@ -32,7 +32,7 @@ explicit authorization to test.
 
 ## Version
 
-Current version: 1.0.0
+Current version: 1.2.0
 
 ## Current contents
 
